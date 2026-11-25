@@ -1,0 +1,10 @@
+The original note and accompanying original verification code are licensed under
+Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+Authors, in order:
+Haobo Ma — ChronoAI Pte Ltd, Singapore
+Wenlin Zhang — National University of Singapore; ChronoAI Pte Ltd, Singapore
+
+License text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Third-party scientific sources are cited, not relicensed by this notice.

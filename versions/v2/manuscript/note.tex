@@ -1,0 +1,453 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xurl}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\Rea}{\operatorname{Re}}
+\title{Proof of Granvik's real-part conjecture in OEIS A292273\\
+\large revision 24, FORMULA, 6 July 2024}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\
+\small ChronoAI Pte Ltd, Singapore}
+\date{3 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove Mats Granvik's conjecture in the FORMULA section of OEIS
+A292273, revision 24, dated 6 July 2024: the sequence that is zero at odd positive
+indices and $-\mu(n)$ at even indices equals $\Rea(\mu(n)i^n)$.
+The proof uses the four powers of $i$ and the vanishing of the M\"obius
+function on multiples of four. We also derive the adjacent parity and
+support formulas, prove a finite-trajectory identity for every map whose
+even branch halves and whose odd branch is even, and give the associated
+Dirichlet identities and support density. We correct the odd-prime-power
+formula and two reciprocal constants in the related entry A087003.
+\end{abstract}
+\noindent\small Licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}.\normalsize
+
+\section{The real-part identity}
+Let $\mu:\mathbb Z_{>0}\to\{-1,0,1\}$ be the M\"obius function:
+$\mu(1)=1$, $\mu(n)=(-1)^r$ if $n$ is a product of $r$ distinct
+primes, and $\mu(n)=0$ if a prime square divides $n$.
+The primary definition in OEIS A292273 \cite{entry} is
+\begin{equation}\label{eq:def}
+ a(n)=\begin{cases}0,&n\text{ odd},\\-\mu(n),&n\text{ even},\end{cases}
+ \qquad n\geq1.
+\end{equation}
+The entry was contributed by Antti Karttunen on 14 September 2017.
+Its FORMULA section labels the following equality a ``Conjecture'',
+attributed to Mats Granvik on 6 July 2024, in entry revision 24.
+
+\begin{theorem}\label{thm:main}
+For every positive integer $n$, with $i^2=-1$,
+\begin{equation}\label{eq:main}
+ a(n)=\Rea\bigl(\mu(n)i^n\bigr).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Because $\mu(n)$ is real and $i^{n+4}=i^n$, the four possibilities are
+\[
+\begin{array}{c|rrrr}
+n\bmod4&0&1&2&3\\\hline
+\Rea(\mu(n)i^n)&\mu(n)&0&-\mu(n)&0.
+\end{array}
+\]
+The odd classes agree with \eqref{eq:def}, and so does class $2$.
+In class $0$, the square $2^2$ divides $n$, so $\mu(n)=0$;
+both sides of \eqref{eq:main} are therefore zero. These four cases
+exhaust the positive integers.
+\end{proof}
+
+The mechanism has an exact general form. If $f$ is any real-valued
+function on the positive integers and $a_f(n)$ is zero for odd $n$
+and $-f(n)$ for even $n$, then
+\[
+ a_f(n)=\Rea(f(n)i^n)\text{ for every }n\geq1
+ \quad\Longleftrightarrow\quad f(4m)=0\text{ for every }m\geq1.
+\]
+Indeed, the same table gives equality automatically in classes $1,2,3$.
+In class $0$ it requires $-f(n)=f(n)$, equivalent to $f(n)=0$ over
+the reals. Thus squarefreeness is used precisely to supply the necessary
+vanishing in this last class.
+
+\section{Adjacent formulas and trajectory sums}
+Write $p(n)=n\bmod2$ and $b(n)=p(n)\mu(n)$; these are the sequences
+A000035 and A087003, respectively, in the arithmetic definition of the
+latter \cite{companion}. The following consequences also identify the
+two formulas adjacent to Granvik's conjecture in A292273.
+
+\begin{corollary}\label{cor:siblings}
+For all $n,m\geq1$,
+\begin{align}
+ a(n)&=(p(n)-1)\mu(n)=b(n)-\mu(n),\label{eq:parity}\\
+ a(2m)&=\begin{cases}\mu(m),&m\text{ odd},\\0,&m\text{ even},\end{cases}
+ \label{eq:half}\\
+ a(n)\ne0&\quad\Longleftrightarrow\quad n\text{ is even and squarefree}.
+ \label{eq:support}
+\end{align}
+\end{corollary}
+\begin{proof}
+In \eqref{eq:parity}, $p(n)-1$ is zero at odd $n$ and $-1$ at even
+$n$, giving both equalities directly. If $m$ is odd and squarefree,
+adjoining the new prime factor $2$ reverses the sign of $\mu$, so
+$\mu(2m)=-\mu(m)$. If odd $m$ is not squarefree, both these values
+are zero. If $m$ is even, $4\mid 2m$ and $\mu(2m)=0$.
+This proves \eqref{eq:half}. Finally, $\mu(n)\ne0$ is equivalent to
+squarefreeness, and \eqref{eq:def} then gives \eqref{eq:support}.
+\end{proof}
+Thus the nonzero positions are exactly A039956, the even squarefree
+numbers \cite{support}. The identities \eqref{eq:parity} are already
+recorded in A292273; they are included to make their relation to the
+real-part formula explicit.
+
+\begin{corollary}\label{cor:nearby}
+For $m\geq1$, $b(m)=-\mu(2m)=a(2m)$. Consequently the A087003
+comment of 18 September 2017 has the exact form
+\[
+ b(m)\ne\mu(m)\quad\Longleftrightarrow\quad
+ m\text{ is even and squarefree}.
+\]
+The second column of A156241 satisfies $T(2m,2)=b(m)$.
+The absolute values of A091069 equal $|b(m)|$.
+The support also satisfies the A039956 criterion
+$|\mathrm{A092673}(m)|=2$.
+\end{corollary}
+\begin{proof}
+The halving formula gives $-\mu(2m)=b(m)$, including nonsquarefree $m$.
+Thus A099991 is $-b$, and A099990 is the odd-index subsequence
+$b(2j+1)=\mu(2j+1)$ for $j\geq0$.
+The difference $b-\mu=a$ proves the stated equivalence.
+For $2\mid 2m$, the A156241 entry gives
+$T(2m,2)=\mu(2m)\mu(2)=-\mu(2m)$; its displayed diagonal convention
+also gives this value at $(2,2)$. This does not require a convention for
+other diagonal entries, whose discrepancy was identified by Mathar in
+that entry on 14 March 2009.
+The prime-factor definition of A091069 is zero at even or nonsquarefree
+arguments, and is a product of signs at odd squarefree arguments;
+this is precisely the support of $|b|$.
+Finally A092673 has value $\mu(m)$ for odd $m$, and
+$\mu(m)-\mu(m/2)$ for even $m$. At $m=2u$ with $u$ odd this is
+$-2\mu(u)$; at $m=4u$ it is $-\mu(2u)$, of magnitude at most one.
+Hence magnitude two occurs exactly when $m$ is even and squarefree.
+All entry definitions used here are recorded in \cite{nearby}.
+\end{proof}
+
+For the trajectory interpretation, use the \emph{unaccelerated} Collatz
+map A006370,
+\[
+ T(n)=\begin{cases}3n+1,&n\text{ odd},\\n/2,&n\text{ even}.
+ \end{cases}
+\]
+This is not the accelerated map A014682, whose odd branch is
+$(3n+1)/2$. The following telescoping form spells out the cancellation
+argument given by Marc LeBrun in A087003, COMMENT, 19 February 2004
+\cite{companion}.
+
+\begin{proposition}\label{prop:trajectory}
+Let $S$ map positive integers to positive integers, with
+$S(2m)=m$ and $S(2m-1)$ even for every $m\geq1$.
+For any finite trajectory segment $n_0,\ldots,n_L$ with
+$n_{j+1}=S(n_j)$ and $L\geq0$,
+\begin{equation}\label{eq:finite}
+ \sum_{j=1}^{L}\mu(n_j)=a(n_0)-a(n_L).
+\end{equation}
+In particular, if $n_L=1$, the sum excluding the initial term and
+including the terminal $1$ is $a(n_0)$, while the sum including both
+endpoints is $b(n_0)$.
+\end{proposition}
+\begin{proof}
+First, $\mu(n)=b(n)-b(S(n))$ for every positive $n$. If $n$ is odd,
+$S(n)$ is even, so the right side is $\mu(n)-0$. If $n=2m$ with
+$m$ odd, it is $0-\mu(m)=\mu(2m)$ by the sign identity in the preceding
+proof. If $n=2m$ with $m$ even, both $b(n)$ and $b(m)$ vanish, as does
+$\mu(n)$ since $4\mid n$.
+Using $a=b-\mu$, this identity gives
+\[
+ a(n)-a(S(n))
+ =b(n)-b(S(n))-\mu(n)+\mu(S(n))=\mu(S(n)).
+\]
+Summing over $n=n_0,\ldots,n_{L-1}$ proves \eqref{eq:finite}.
+The empty sum at $L=0$ agrees as well. At $n_L=1$, $a(1)=0$;
+adding the initial value $\mu(n_0)$ gives $a(n_0)+\mu(n_0)=b(n_0)$.
+\end{proof}
+The Collatz map $T$ meets these hypotheses, as does any positive-valued
+odd branch in place of $3n+1$ that takes even values. Thus the entry's
+terminal-$1$ sum follows whenever $1$ is reached. Every finite cycle
+of $S$ has M\"obius sum zero, by setting $n_L=n_0$ in
+\eqref{eq:finite}. Universal Collatz termination remains outside these
+finite-segment statements. For the accelerated map A014682 the same
+formula can fail: the segment $3,5$ has sum $\mu(5)=-1$, whereas
+$a(3)-a(5)=0$.
+
+\section{Dirichlet identities and two source corrections}
+For arithmetic functions write $(f*g)(n)=\sum_{d\mid n}f(d)g(n/d)$,
+and let $\delta(1)=1$, $\delta(n)=0$ for $n>1$.
+Michon recorded the inverse relation below in A087003 on
+29 April 2007. Jameson \cite[Lemma 2]{jameson} gives a proof and the
+value at $s=2$. Howroyd recorded the M\"obius transform in that entry
+on 4 August 2018; its inverse appears in A209229 on 20 April 2026.
+
+\begin{corollary}\label{cor:dirichlet}
+Let $h(n)$ be one at powers of two, including $1$, and zero otherwise
+(A209229). Then
+\[
+ p*b=\delta,\qquad b=\mu*h,\qquad
+ \sum_{d\mid n}b(d)=h(n).
+\]
+The function $b$ is multiplicative, with $b(1)=1$ and, for $e\geq1$,
+\begin{equation}\label{eq:prime}
+ b(2^e)=0,\qquad
+ b(q^e)=\begin{cases}-1,&e=1,\\0,&e\geq2,\end{cases}
+ \quad(q\text{ an odd prime}).
+\end{equation}
+For $\Rea(s)>1$, all the following series converge absolutely:
+\begin{align}
+ B(s):=\sum_{n\geq1}\frac{b(n)}{n^s}
+ &=\frac{1}{(1-2^{-s})\zeta(s)},&
+ \sum_{n\geq1}\frac{a(n)}{n^s}
+ &=\frac{1}{(2^s-1)\zeta(s)}.\label{eq:series}
+\end{align}
+The absolute-value series is
+\begin{equation}\label{eq:absolute}
+ \sum_{n\geq1}\frac{|a(n)|}{n^s}
+ =\frac{\zeta(s)}{(1+2^s)\zeta(2s)}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+The divisor sum $(p*b)(n)$ is zero for even $n$ and equals
+$\sum_{d\mid n}\mu(d)=\delta(n)$ for odd $n$; the latter equality
+follows from $\prod_{q\mid n}(1-1)$ when $n>1$.
+If $n=2^v u$ with $u$ odd, then
+$(\mu*h)(n)=\sum_{j=0}^v\mu(2^j u)$ is $\mu(u)$ when $v=0$
+and zero otherwise. Summing $b$ over divisors similarly gives one
+exactly when $u=1$. Since $p$ and $\mu$ are multiplicative, their
+pointwise product $b$ is multiplicative and has \eqref{eq:prime}.
+The Euler products
+$\sum\mu(n)n^{-s}=\prod_q(1-q^{-s})=1/\zeta(s)$ and
+$\sum h(n)n^{-s}=(1-2^{-s})^{-1}$ give $B(s)$.
+Subtracting the M\"obius series, using $a=b-\mu$, gives the second
+formula. Absolute convergence follows from $|a(n)|,|b(n)|\leq1$ and
+$\sum n^{-\Rea(s)}<\infty$.
+For \eqref{eq:absolute}, even squarefree numbers are twice the odd
+squarefree numbers, whose Euler product is
+$\prod_{q\text{ odd}}(1+q^{-s})
+=\zeta(s)/((1+2^{-s})\zeta(2s))$.
+Multiplication by $2^{-s}$ proves the claim.
+\end{proof}
+
+The odd-prime-power expression $(-1+(-1)^e)/2$ in A087003,
+FORMULA, 4 August 2018, is not valid for all positive $e$:
+at $q=3,e=3$ it gives $-1$, but $b(27)=\mu(27)=0$.
+Equation~\eqref{eq:prime} is the corrected expression.
+For the three constants listed there on 17 December 2024,
+\eqref{eq:series} yields
+\begin{equation}\label{eq:constants}
+ B(2)=\frac8{\pi^2}=\mathrm{A217739},\quad
+ B(3)=\frac8{7\zeta(3)}=\frac1{\mathrm{A233091}},\quad
+ B(4)=\frac{96}{\pi^4}=\frac1{\mathrm{A300707}}.
+\end{equation}
+The last two references require reciprocals, because their entries
+define $\mathrm{A233091}=7\zeta(3)/8$ and
+$\mathrm{A300707}=\pi^4/96$ \cite{constants}. These constants exceed
+one as sums of the positive odd reciprocal cubes and fourth powers,
+respectively; their reciprocals are strictly smaller than one.
+
+\begin{corollary}\label{cor:root}
+There is a unique rational arithmetic function $c$ with $c(1)=1$ and
+$c*c=b$. It vanishes at even arguments and is multiplicative, with
+\[
+ c(q^e)=(-1)^e\binom{1/2}{e}\quad(q\text{ odd prime},\ e\geq0).
+\]
+Its reduced numerator and denominator are A318657 and A318658.
+At odd arguments the latter denominator equals A046644, so replacing
+A318658 by A046644 in the quotient leaves the function $c$ unchanged.
+\end{corollary}
+\begin{proof}
+Use the local formal series $1$ at the prime two and $(1-X)^{1/2}$
+at every odd prime. Squaring gives the local series $1$ and $1-X$
+of $b$, so their multiplicative coefficients define $c$ with $c*c=b$.
+For $n>1$, the equation determines
+$2c(n)=b(n)-\sum_{d\mid n,\,1<d<n}c(d)c(n/d)$, which proves
+uniqueness and agrees with the defining recurrence of A318657/A318658
+\cite{root}. To identify the denominator, put
+$g_e=\binom{2e}{e}/4^e$, the local coefficient of $\zeta(s)^{1/2}$.
+For $e\geq1$, $(-1)^e\binom{1/2}{e}=-g_e/(2e-1)$ is dyadic
+since it also equals $-\operatorname{Cat}_{e-1}/2^{2e-1}$.
+The factorial formula $v_2(k!)=k-s_2(k)$, obtained by summing
+$\lfloor k/2^j\rfloor$, gives $v_2\binom{2e}{e}=s_2(e)$.
+Thus both local denominators are $2^{2e-s_2(e)}$.
+Here $s_2(e)$ counts binary ones and
+$\operatorname{Cat}_j=\binom{2j}{j}-\binom{2j}{j+1}$ is integral.
+At odd $n$ the reduced denominators multiply, since each reduced
+numerator is odd and each denominator is a power of two. At even $n$,
+$c(n)=0$, so either positive denominator gives quotient zero.
+\end{proof}
+
+\section{The support and its density}
+The support statement in Corollary~\ref{cor:siblings} is the bijection
+$m\mapsto2m$ from odd squarefree numbers (A056911) to even squarefree
+numbers. If $u_k$ enumerates the former and $v_k$ the latter, then
+$v_k=2u_k$ and, since $u_k$ is odd,
+$v_k=2(1+2\,\mathrm{A264387}(k))$ by that entry's definition
+\cite{support,odd-support}. For each even squarefree $n=2u$, its odd
+divisors sum to $\sigma(u)$ and its even divisors to $2\sigma(u)$,
+proving the divisor-sum comment of 7 September 2002 in A039956.
+
+The density formulas in A039956 and A056911 were recorded by
+Forgues on 27 May 2009. Jameson \cite{jameson} proves the even/odd
+case; his later alternative proof \cite{jameson-later} inverts the
+even/odd counting relation. The same elementary count below supplies
+the prime-parameter version.
+
+\begin{samepage}
+\begin{corollary}\label{cor:density}
+For a fixed prime $q$ and real $x\to\infty$, the number of squarefree
+integers at most $x$ divisible by $q$ is
+\[
+ \frac{x}{(q+1)\zeta(2)}+O_q(\sqrt{x}),
+\]
+and the number not divisible by $q$ is
+$qx/((q+1)\zeta(2))+O_q(\sqrt{x})$.
+In particular the support count of $a$ is
+$2x/\pi^2+O(\sqrt{x})$ and
+$v_k=(\pi^2/2)k+O(\sqrt{k})$; also
+$u_k=(\pi^2/4)k+O(\sqrt{k})$.
+More generally, the $k$th squarefree multiple of $q$ is
+$(q+1)\zeta(2)k+O_q(\sqrt{k})$ and the $k$th squarefree integer
+coprime to $q$ is $((q+1)/q)\zeta(2)k+O_q(\sqrt{k})$.
+\end{corollary}
+\end{samepage}
+\begin{proof}
+The identity $\mu(n)^2=\sum_{d^2\mid n}\mu(d)$ follows by taking
+the factor $1-1$ for each squared prime divisor.
+For squarefree $n$ not divisible by $q$, summing this identity gives
+\[
+ Q_q(x)=\sum_{\substack{d\leq\sqrt{x}\\q\nmid d}}\mu(d)
+  \#\{r\leq x/d^2:q\nmid r\}
+ =\left(1-\frac1q\right)x
+  \sum_{\substack{d\leq\sqrt{x}\\q\nmid d}}\frac{\mu(d)}{d^2}
+  +O(\sqrt{x}).
+\]
+The count inside the sum differs from $(1-1/q)x/d^2$ by at most two.
+Extending the series to infinity costs $O(\sqrt{x})$; its Euler
+product is $1/((1-q^{-2})\zeta(2))$.
+Hence $Q_q(x)=qx/((q+1)\zeta(2))+O(\sqrt{x})$.
+Multiplication by $q$ is a bijection from squarefree integers coprime
+to $q$ to squarefree integers divisible by $q$, so the latter count
+is $Q_q(x/q)$. Set $q=2$ for the support. The enumerations follow
+from $k=Cv_k+O(\sqrt{v_k})$: first $v_k\asymp k$, then
+$v_k=k/C+O(\sqrt{k})$, and likewise for $u_k$ and the general prime.
+Finally the relation $\mathrm{A264387}(k)=(v_k-2)/4$ gives its
+density $8/\pi^2$, as stated in its comment of 26 September 2023.
+\end{proof}
+
+\section{Coverage and verification}
+The exact posing locator is A292273, revision 24, FORMULA, the
+conjecture dated 6 July 2024. The correspondence with the source's other
+items is as follows.
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.31\linewidth}>{\raggedright\arraybackslash}p{.20\linewidth}>{\raggedright\arraybackslash}p{.44\linewidth}@{}}
+\toprule Source item&Status&Coverage\\\midrule\endhead
+A292273 FORMULA, 6 July 2024&proved&Theorem~\ref{thm:main}, every $n\geq1$.\\
+A292273 first two formulas&proved&Corollary~\ref{cor:siblings}, parity and $b-\mu$.\\
+A292273 COMMENT and programs&proved&Proposition~\ref{prop:trajectory}; terminal sums when $1$ is reached.\\
+A292273 nonzero positions&proved&Corollary~\ref{cor:siblings}, even squarefree support.\\
+A000035, A008683&proved&Parity and M\"obius identities used here; unrelated entry formulas not covered.\\
+A006370 versus A014682&proved&Unaccelerated map satisfies the hypotheses; accelerated counterexample $3,5$.\\
+A087003 LeBrun, 19 February 2004&prior proof cited&Cancellation; generalized finite form in Proposition~\ref{prop:trajectory}.\\
+A087003 empirical deviation, 18 September 2017&proved&Corollary~\ref{cor:nearby}, exact if and only if.\\
+A087003 multiplicativity and inverse&prior proof cited&Michon, 29 April 2007; Jameson, Lemma 2; Corollary~\ref{cor:dirichlet}.\\
+A087003 odd prime powers, 4 August 2018&refuted-and-corrected&Counterexample $27$; corrected \eqref{eq:prime}.\\
+A087003 Dirichlet series&proved&Equation~\eqref{eq:series}, $\Rea(s)>1$.\\
+A087003 constants, 17 December 2024&refuted-and-corrected&Equation~\eqref{eq:constants}; last two require reciprocals.\\
+A087003 and A099991, 12 April 2026&prior proof cited&Corollary~\ref{cor:nearby}; same identity in A099991, Wilson, 12 June 2005.\\
+A099990 odd subsequence&proved&Corollary~\ref{cor:nearby}, with its offset zero.\\
+A209229 M\"obius transform&proved&Corollary~\ref{cor:dirichlet}; Howroyd 2018, Oudra 2026.\\
+A156241 even rows, second column&proved&$T(2m,2)=b(m)$; diagonal issue previously identified by Mathar.\\
+A091069 absolute values&prior proof cited&LeBrun's defining support argument; Corollary~\ref{cor:nearby}.\\
+A318657/A318658; A046644 replacement&proved&Corollary~\ref{cor:root}, rational convolution and denominators.\\
+A039956, A056911, A264387&proved&Bijection, enumerations and density; Corollary~\ref{cor:density}.\\
+A039956 divisor sums, 7 September 2002&proved&Even-divisor sum is twice the odd-divisor sum.\\
+A039956 A092673 criterion&proved&Corollary~\ref{cor:nearby}, magnitude two.\\
+A039956 reciprocal-power sum&proved&Equation~\eqref{eq:absolute}.\\
+A039956 density, 27 May 2009&prior proof cited&Jameson (2010); prime-parameter proof in Corollary~\ref{cor:density}.\\
+Other formulas in the linked entries&not covered&Factorization-theoretic characterizations, unrelated transforms and full arrays.\\
+Universal Collatz termination&not covered&Only finite segments and trajectories reaching $1$ enter the sum statements.\\
+\bottomrule
+\end{longtable}\endgroup
+
+The pinned Lean source is
+\href{https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean}{\texttt{GranvikMobiusRealPart.lean}}.
+In namespace \path{D5.S3.Arith.Mobius.GranvikMobiusRealPart},
+the declaration \texttt{a} defines \eqref{eq:def} on natural indices,
+and \texttt{result} proves Theorem~\ref{thm:main} for every $n>0$,
+with the integer values embedded in $\mathbb R$ and $\mathbb C$.
+The general criterion, Corollaries~\ref{cor:siblings}, \ref{cor:nearby},
+\ref{cor:dirichlet}, \ref{cor:root}, \ref{cor:density} and
+Proposition~\ref{prop:trajectory} have the written proofs given above.
+The declaration \texttt{result} states the real-part identity, not these
+additional conclusions.
+
+The accompanying \texttt{verify.py} supplies finite integer checks of
+the real-part, parity, support and halving identities through $65537$,
+checks the displayed initial sequence values against the source, and
+checks trajectory telescoping for starting values through $1000$.
+It also checks the divisor identities through $2048$, the rational
+convolution square root through $512$, source constants by rational
+intervals, the prime-power counterexample, generalized odd branches,
+and squarefree counts for primes $2,3,5,7$ through $65537$.
+Its real-part calculation uses the exact integer cycle $(1,0,-1,0)$,
+not floating-point approximations. These finite checks are distinct from
+the proofs for all positive indices.
+
+\small
+\begin{thebibliography}{9}
+\bibitem{entry} The OEIS Foundation Inc.,
+\emph{A292273}, contributed by Antti Karttunen, 14 September 2017;
+real-part conjecture by Mats Granvik, FORMULA, 6 July 2024,
+entry revision 24. \url{https://oeis.org/A292273}.
+\bibitem{companion} The OEIS Foundation Inc.,
+\emph{A087003}, contributed by Labos Elemer, 2 October 2003;
+Marc LeBrun's COMMENT, 19 February 2004, and Antti Karttunen's
+arithmetic definition and FORMULA, September 2017.
+\url{https://oeis.org/A087003}.
+\bibitem{support} The OEIS Foundation Inc.,
+\emph{A039956: Even squarefree numbers}, contributed by R. K. Guy.
+\url{https://oeis.org/A039956}.
+\bibitem{nearby} The OEIS Foundation Inc.,
+\emph{A091069, A092673, A099990, A099991, A156241}.
+Prime-factor, halving and array definitions, and the Mathar comment,
+14 March 2009. \url{https://oeis.org/A091069};
+\url{https://oeis.org/A092673}; \url{https://oeis.org/A099990};
+\url{https://oeis.org/A099991}; \url{https://oeis.org/A156241}.
+\bibitem{constants} The OEIS Foundation Inc.,
+\emph{A217739, A233091, A300707}, defining names and formulas.
+\url{https://oeis.org/A217739}; \url{https://oeis.org/A233091};
+\url{https://oeis.org/A300707}.
+\bibitem{root} The OEIS Foundation Inc.,
+\emph{A318657, A318658}, Antti Karttunen, 31 August 2018;
+\emph{A046644}, definition via the square root of the zeta function.
+\url{https://oeis.org/A318657}; \url{https://oeis.org/A318658};
+\url{https://oeis.org/A046644}.
+\bibitem{odd-support} The OEIS Foundation Inc.,
+\emph{A056911: Odd squarefree numbers} and
+\emph{A264387}, defining names and formulas.
+\url{https://oeis.org/A056911}; \url{https://oeis.org/A264387}.
+\bibitem{jameson} G. J. O. Jameson,
+\emph{Even and odd square-free numbers},
+The Mathematical Gazette \textbf{94} (529) (2010), 123--127,
+Lemma 2 and the counting theorem.
+\url{https://www.maths.lancs.ac.uk/~jameson/sqf.pdf}.
+\bibitem{jameson-later} G. J. O. Jameson,
+\emph{Revisiting even and odd square-free numbers},
+The Mathematical Gazette \textbf{105} (563) (2021), 299--300.
+\url{https://www.maths.lancs.ac.uk/~jameson/sqfree.pdf}.
+\end{thebibliography}
+\end{document}

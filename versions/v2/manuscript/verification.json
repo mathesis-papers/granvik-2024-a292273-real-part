@@ -1,0 +1,123 @@
+{
+  "status": "pass",
+  "scope": "Finite exact integer checks; all-index proofs are in note.tex.",
+  "identity_n_max": 65537,
+  "mobius_trial_crosscheck_n_max": 10000,
+  "source": "OEIS A292273 revision 24, displayed initial values, offset 1",
+  "source_values_checked": 105,
+  "residue_counts_0_1_2_3": [
+    16384,
+    16385,
+    16384,
+    16384
+  ],
+  "nonzero_positions_checked": 13279,
+  "trajectory_start_max": 1000,
+  "trajectory_step_cap": 10000,
+  "trajectory_total_steps": 59542,
+  "trajectory_max_steps": 178,
+  "trajectory_max_value": 250504,
+  "sibling_checks": {
+    "divisor_identity_n_max": 2048,
+    "rational_square_root_n_max": 512,
+    "prime_power_counterexample": {
+      "n": 27,
+      "source_expression": -1,
+      "correct_value": 0
+    },
+    "accelerated_map_counterexample": {
+      "segment": [
+        3,
+        5
+      ],
+      "mobius_sum": -1,
+      "endpoint_difference": 0
+    },
+    "generalized_map_prefix_checks": 4800,
+    "generalized_map_odd_branches": [
+      "n+1",
+      "3n+1",
+      "5n+3",
+      "7n+5"
+    ],
+    "constant_interval_cutoff": 256,
+    "constant_rational_intervals": {
+      "2": {
+        "B_s": {
+          "lower_times_10_pow_12": 806698475419,
+          "upper_times_10_pow_12": 814510975420
+        },
+        "reciprocal_odd_power_sum": {
+          "lower_times_10_pow_12": 809288243204,
+          "upper_times_10_pow_12": 811854745160
+        },
+        "odd_power_sum": {
+          "lower_times_10_pow_12": 1231747435070,
+          "upper_times_10_pow_12": 1235653685071
+        }
+      },
+      "3": {
+        "B_s": {
+          "lower_times_10_pow_12": 950743767226,
+          "upper_times_10_pow_12": 950759026016
+        },
+        "reciprocal_odd_power_sum": {
+          "lower_times_10_pow_12": 950747834697,
+          "upper_times_10_pow_12": 950754731121
+        },
+        "odd_power_sum": {
+          "lower_times_10_pow_12": 1051795975625,
+          "upper_times_10_pow_12": 1051803605021
+        }
+      },
+      "4": {
+        "B_s": {
+          "lower_times_10_pow_12": 985534276985,
+          "upper_times_10_pow_12": 985534316723
+        },
+        "reciprocal_odd_power_sum": {
+          "lower_times_10_pow_12": 985534286800,
+          "upper_times_10_pow_12": 985534306099
+        },
+        "odd_power_sum": {
+          "lower_times_10_pow_12": 1014678021670,
+          "upper_times_10_pow_12": 1014678041539
+        }
+      }
+    },
+    "squarefree_multiple_counts_at_65537": {
+      "2": 13279,
+      "3": 9967,
+      "5": 6640,
+      "7": 4984
+    },
+    "displayed_source_values_checked": {
+      "A292273": 105,
+      "A087003": 113,
+      "A039956": 54,
+      "A056911": 62,
+      "A264387": 82,
+      "A099990": 105,
+      "A099991": 105,
+      "A209229": 86,
+      "A318657": 105,
+      "A318658": 105,
+      "A046644": 78,
+      "A092673": 106,
+      "A091069": 108
+    }
+  },
+  "checks": [
+    "real_part",
+    "parity",
+    "companion",
+    "halving",
+    "support",
+    "mobius_crosscheck",
+    "source_values",
+    "coboundary",
+    "finite_trajectory",
+    "terminal_sum",
+    "inclusive_sum"
+  ]
+}

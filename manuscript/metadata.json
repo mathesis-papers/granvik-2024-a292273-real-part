@@ -1,0 +1,15 @@
+{
+  "id": "granvik-2024-a292273-real-part",
+  "revision": 2,
+  "problem_ids": ["granvik-2024-a292273-real-part"],
+  "topic": "Granvik's real-part conjecture in OEIS A292273, FORMULA, 6 July 2024",
+  "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+  "creators": [
+    {"name": "Haobo Ma", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Wenlin Zhang", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We prove Mats Granvik's conjecture in the FORMULA section of OEIS A292273, revision 24, dated 6 July 2024: the sequence that is zero at odd positive indices and -mu(n) at even indices equals Re(mu(n)i^n). The proof uses the four powers of i and the vanishing of the Möbius function on multiples of four. We also derive the adjacent parity and support formulas, prove a finite-trajectory identity for every map whose even branch halves and whose odd branch is even, and give the associated Dirichlet identities and support density. We correct the odd-prime-power formula and two reciprocal constants in the related entry A087003.",
+  "summary": "The all-positive-index real-part identity, generalized finite trajectory sums, Dirichlet inverse and square-root identities, support density, and corrected A087003 prime-power and reciprocal-constant formulas. The pinned Lean declaration proves the main real-part theorem; the other statements have written proofs and finite checks.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+}

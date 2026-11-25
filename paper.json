@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 104701,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "3ac36d476c7f2ea25c7b0cbd476be5ea66d771f02d5f19cc01e124339660448c",
+      "sha256": "3ac36d476c7f2ea25c7b0cbd476be5ea66d771f02d5f19cc01e124339660448c"
+    },
+    "source": {
+      "bytes": 18337,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "b66d3d790500180795263d91190096d4995b0048b0f5be6d24475862a30d2578",
+      "sha256": "b66d3d790500180795263d91190096d4995b0048b0f5be6d24475862a30d2578"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We prove Mats Granvik's conjecture in the FORMULA section of OEIS A292273, revision 24, dated 6 July 2024: the sequence that is zero at odd positive indices and -mu(n) at even indices equals Re(mu(n)i^n). The proof uses the four powers of i and the vanishing of the Möbius function on multiples of four. We also derive the adjacent parity and support formulas, prove a finite-trajectory identity for every map whose even branch halves and whose odd branch is even, and give the associated Dirichlet identities and support density. We correct the odd-prime-power formula and two reciprocal constants in the related entry A087003.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 104701,
+      "sha256": "3ac36d476c7f2ea25c7b0cbd476be5ea66d771f02d5f19cc01e124339660448c",
+      "url": "/api/v1/collected-papers/granvik-2024-a292273-real-part/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-25T18:21:57.371290768Z",
+    "record": "granvik-2024-a292273-real-part",
+    "repository_name": "granvik-2024-a292273-real-part",
+    "source": {
+      "bytes": 18337,
+      "sha256": "b66d3d790500180795263d91190096d4995b0048b0f5be6d24475862a30d2578",
+      "url": "/api/v1/collected-papers/granvik-2024-a292273-real-part/files/source?version=2"
+    },
+    "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-25T18:21:57.371290768Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "granvik-2024-a292273-real-part"
+  }
+}

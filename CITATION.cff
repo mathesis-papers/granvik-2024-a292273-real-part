@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-25"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/granvik-2024-a292273-real-part?version=2"
+license: "CC-BY-4.0"

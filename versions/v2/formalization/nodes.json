@@ -1,0 +1,277 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:granvik-2024-a292273-real-part:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+      },
+      "lineage": "collected:granvik-2024-a292273-real-part:s1",
+      "macros": {
+        "\\Rea": "\\operatorname{Re}"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "granvik-2024-a292273-real-part",
+      "scope": "in_scope",
+      "statement": "For every positive integer $n$, with $i^2=-1$,\n\\begin{equation}\n a(n)=\\Rea\\bigl(\\mu(n)i^n\\bigr).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+      "toolchain": null,
+      "version": 2,
+      "work": "granvik-2024-a292273-real-part"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:granvik-2024-a292273-real-part:2:s2",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+      },
+      "lineage": "collected:granvik-2024-a292273-real-part:s2",
+      "macros": {
+        "\\Rea": "\\operatorname{Re}"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "granvik-2024-a292273-real-part",
+      "scope": "in_scope",
+      "statement": "For all $n,m\\geq1$,\n\\begin{align}\n a(n)&=(p(n)-1)\\mu(n)=b(n)-\\mu(n),\\\\\n a(2m)&=\\begin{cases}\\mu(m),&m\\text{ odd},\\\\0,&m\\text{ even},\\end{cases}\n \\\\\n a(n)\\ne0&\\quad\\Longleftrightarrow\\quad n\\text{ is even and squarefree}.\n \n\\end{align}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+      "toolchain": null,
+      "version": 2,
+      "work": "granvik-2024-a292273-real-part"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:granvik-2024-a292273-real-part:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+      },
+      "lineage": "collected:granvik-2024-a292273-real-part:s3",
+      "macros": {
+        "\\Rea": "\\operatorname{Re}"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "granvik-2024-a292273-real-part",
+      "scope": "in_scope",
+      "statement": "For $m\\geq1$, $b(m)=-\\mu(2m)=a(2m)$. Consequently the A087003\ncomment of 18 September 2017 has the exact form\n\\[\n b(m)\\ne\\mu(m)\\quad\\Longleftrightarrow\\quad\n m\\text{ is even and squarefree}.\n\\]\nThe second column of A156241 satisfies $T(2m,2)=b(m)$.\nThe absolute values of A091069 equal $|b(m)|$.\nThe support also satisfies the A039956 criterion\n$|\\mathrm{A092673}(m)|=2$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+      "toolchain": null,
+      "version": 2,
+      "work": "granvik-2024-a292273-real-part"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:granvik-2024-a292273-real-part:2:s4",
+      "kind": "paper",
+      "label": "Proposition",
+      "lean_source": {
+        "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+      },
+      "lineage": "collected:granvik-2024-a292273-real-part:s4",
+      "macros": {
+        "\\Rea": "\\operatorname{Re}"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "granvik-2024-a292273-real-part",
+      "scope": "in_scope",
+      "statement": "Let $S$ map positive integers to positive integers, with\n$S(2m)=m$ and $S(2m-1)$ even for every $m\\geq1$.\nFor any finite trajectory segment $n_0,\\ldots,n_L$ with\n$n_{j+1}=S(n_j)$ and $L\\geq0$,\n\\begin{equation}\n \\sum_{j=1}^{L}\\mu(n_j)=a(n_0)-a(n_L).\n\\end{equation}\nIn particular, if $n_L=1$, the sum excluding the initial term and\nincluding the terminal $1$ is $a(n_0)$, while the sum including both\nendpoints is $b(n_0)$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+      "toolchain": null,
+      "version": 2,
+      "work": "granvik-2024-a292273-real-part"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:granvik-2024-a292273-real-part:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+      },
+      "lineage": "collected:granvik-2024-a292273-real-part:s5",
+      "macros": {
+        "\\Rea": "\\operatorname{Re}"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "granvik-2024-a292273-real-part",
+      "scope": "in_scope",
+      "statement": "Let $h(n)$ be one at powers of two, including $1$, and zero otherwise\n(A209229). Then\n\\[\n p*b=\\delta,\\qquad b=\\mu*h,\\qquad\n \\sum_{d\\mid n}b(d)=h(n).\n\\]\nThe function $b$ is multiplicative, with $b(1)=1$ and, for $e\\geq1$,\n\\begin{equation}\n b(2^e)=0,\\qquad\n b(q^e)=\\begin{cases}-1,&e=1,\\\\0,&e\\geq2,\\end{cases}\n \\quad(q\\text{ an odd prime}).\n\\end{equation}\nFor $\\Rea(s)>1$, all the following series converge absolutely:\n\\begin{align}\n B(s):=\\sum_{n\\geq1}\\frac{b(n)}{n^s}\n &=\\frac{1}{(1-2^{-s})\\zeta(s)},&\n \\sum_{n\\geq1}\\frac{a(n)}{n^s}\n &=\\frac{1}{(2^s-1)\\zeta(s)}.\n\\end{align}\nThe absolute-value series is\n\\begin{equation}\n \\sum_{n\\geq1}\\frac{|a(n)|}{n^s}\n =\\frac{\\zeta(s)}{(1+2^s)\\zeta(2s)}.\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+      "toolchain": null,
+      "version": 2,
+      "work": "granvik-2024-a292273-real-part"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:granvik-2024-a292273-real-part:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+      },
+      "lineage": "collected:granvik-2024-a292273-real-part:s6",
+      "macros": {
+        "\\Rea": "\\operatorname{Re}"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "granvik-2024-a292273-real-part",
+      "scope": "in_scope",
+      "statement": "There is a unique rational arithmetic function $c$ with $c(1)=1$ and\n$c*c=b$. It vanishes at even arguments and is multiplicative, with\n\\[\n c(q^e)=(-1)^e\\binom{1/2}{e}\\quad(q\\text{ odd prime},\\ e\\geq0).\n\\]\nIts reduced numerator and denominator are A318657 and A318658.\nAt odd arguments the latter denominator equals A046644, so replacing\nA318658 by A046644 in the quotient leaves the function $c$ unchanged.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+      "toolchain": null,
+      "version": 2,
+      "work": "granvik-2024-a292273-real-part"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:granvik-2024-a292273-real-part:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
+      },
+      "lineage": "collected:granvik-2024-a292273-real-part:s7",
+      "macros": {
+        "\\Rea": "\\operatorname{Re}"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "granvik-2024-a292273-real-part",
+      "scope": "in_scope",
+      "statement": "For a fixed prime $q$ and real $x\\to\\infty$, the number of squarefree\nintegers at most $x$ divisible by $q$ is\n\\[\n \\frac{x}{(q+1)\\zeta(2)}+O_q(\\sqrt{x}),\n\\]\nand the number not divisible by $q$ is\n$qx/((q+1)\\zeta(2))+O_q(\\sqrt{x})$.\nIn particular the support count of $a$ is\n$2x/\\pi^2+O(\\sqrt{x})$ and\n$v_k=(\\pi^2/2)k+O(\\sqrt{k})$; also\n$u_k=(\\pi^2/4)k+O(\\sqrt{k})$.\nMore generally, the $k$th squarefree multiple of $q$ is\n$(q+1)\\zeta(2)k+O_q(\\sqrt{k})$ and the $k$th squarefree integer\ncoprime to $q$ is $((q+1)/q)\\zeta(2)k+O_q(\\sqrt{k})$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
+      "toolchain": null,
+      "version": 2,
+      "work": "granvik-2024-a292273-real-part"
+    }
+  ]
+}
