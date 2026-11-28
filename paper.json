@@ -31,6 +31,7 @@
     "concept_doi": null,
     "current_version": 2,
     "doi": null,
+    "kind": "note",
     "lean_source": {
       "revision": "3bedf2870aacc6e7f17353444aadaa49fb73157c",
       "url": "https://github.com/the-omega-institute/trureturing/blob/3bedf2870aacc6e7f17353444aadaa49fb73157c/D5/S3/Arith/Mobius/GranvikMobiusRealPart.lean"
@@ -55,10 +56,12 @@
     "title": "Proof of Granvik's real-part conjecture in OEIS A292273 (revision 24, FORMULA, 6 July 2024)",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-25T18:21:57.371290768Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "granvik-2024-a292273-real-part"
